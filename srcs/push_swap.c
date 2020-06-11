@@ -1,8 +1,33 @@
 #include "push_swap.h"
 
+
+void ft_lstprint_two(t_list *a, t_list *b)
+{
+    t_list      *temp_a;
+    t_list      *temp_b;
+
+    temp_a = a;
+    temp_b = b;
+
+    printf("\n A\tB \n");
+    printf("  \t  \n");
+
+    while (temp_a || temp_b)
+    {
+        printf(" %s\t%s \n", temp_a ? temp_a->content : "", temp_b ? temp_b->content : "");
+        
+        if (temp_a)
+            temp_a = temp_a->next;
+        if (temp_b)
+            temp_b = temp_b->next;
+    }
+
+    printf("\n");
+}
+
 void swap(t_list **lst)
 {
-    t_list *temp;
+    t_list      *temp;
 
     temp = *lst;
 
@@ -15,8 +40,8 @@ void swap(t_list **lst)
 
 void rotate(t_list **lst)
 {
-    t_list *temp;
-    t_list *last_node;
+    t_list      *temp;
+    t_list      *last_node;
 
     temp = *lst;
     last_node = *lst;
@@ -49,48 +74,62 @@ void reverse_rotate(t_list **lst)
     *lst = last_node;
 }
 
+void push(t_list **src, t_list **dst)
+{
+    t_list      *temp;
+
+    temp = *src;
+
+    if (*src)
+        *src = (*src)->next;
+    
+    ft_lstadd_front(dst, temp);
+}
+
 int push_swap(int ac, char **av)
 {
+    t_list      *head_a; 
+    t_list      *head_b;
+    t_list      *temp;
+    int         i;
 
-    for (int i = 0; i < ac; i++)
-        printf("%d: %s\n", i, av[i]);
+    head_a = NULL; 
+    head_b = NULL;
+    i = 1;
 
-    t_list *a;
-    t_list *b;
-    t_list *c;
-    t_list *d;
+    while (i < ac)
+    {
+        temp = ft_lstnew(av[i], sizeof(int));
+        ft_lstadd_back(&head_a, temp);  
+        i++;  
+    }
 
-    a = ft_lstnew(av[1], sizeof(int));
-    b = ft_lstnew(av[2], sizeof(int));
-    c = ft_lstnew(av[3], sizeof(int));
-    d = ft_lstnew(av[4], sizeof(int));
 
-    ft_lstadd_back(&a, b);
-    ft_lstadd_back(&a, c);
-    ft_lstadd_back(&a, d);
+    ft_lstprint_two(head_a, head_b);
+    printf("swap: \n");
+    swap(&head_a);
 
-    ft_lstprint(a);
-    printf("-> swap <-\n");
-    swap(&a);
+    ft_lstprint_two(head_a, head_b);
+    printf("rotate: \n");
+    rotate(&head_a);
 
-    ft_lstprint(a);
-    printf("-> rotate <-\n");
-    rotate(&a);
-
-    ft_lstprint(a);
-    printf("-> reverse rotate <-\n");
-    reverse_rotate(&a);
+    ft_lstprint_two(head_a, head_b);
+    printf("reverse rotate: \n");
+    reverse_rotate(&head_a);
     
-    ft_lstprint(a);
-
-
-    // int     i;
-
-    // i = 0;
-    // while (i < ac)
-    // {
-
-    // }
+    ft_lstprint_two(head_a, head_b);
+    printf("push b: \n");
+    push(&head_a, &head_b);
+    
+    ft_lstprint_two(head_a, head_b);
+    printf("push b: \n");
+    push(&head_a, &head_b);
+    
+    ft_lstprint_two(head_a, head_b);
+    printf("push a: \n");
+    push(&head_b, &head_a);
+    
+    ft_lstprint_two(head_a, head_b);    
 
     return (0);
 }
