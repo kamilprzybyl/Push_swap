@@ -1,38 +1,67 @@
 #include "push_swap.h"
+#include <time.h>
+#include <sys/time.h>
 
 
 void instructions(char *instruct, t_list **head_a, t_list **head_b)
 {
     if (ft_strcmp(instruct, "sa") == 0)
+    {
         swap(head_a);
+        printf("sa\n");
+    }
     else if (ft_strcmp(instruct, "sb") == 0)
+    {
         swap(head_b);
+        printf("sb\n");
+    }
     else if (ft_strcmp(instruct, "ss") == 0)
     {
         swap(head_a);
         swap(head_b);
+        printf("ss\n");
     }
     else if (ft_strcmp(instruct, "pa") == 0)
+    {
         push(head_b, head_a);
+        printf("pa\n");
+    }
     else if (ft_strcmp(instruct, "pb") == 0)
+    {
         push(head_a, head_b);
+        printf("pb\n");
+    }
     else if (ft_strcmp(instruct, "ra") == 0)
+    {
         rotate(head_a);
+        printf("ra\n");
+    }
     else if (ft_strcmp(instruct, "rb") == 0)
+    {
         rotate(head_b);
+        printf("rb\n");
+    }
     else if (ft_strcmp(instruct, "rr") == 0)
     {
         rotate(head_a);
         rotate(head_b);
+        printf("rr\n");
     }
     else if (ft_strcmp(instruct, "rra") == 0)
+    {
         reverse_rotate(head_a);
+        printf("rra\n");
+    }
     else if (ft_strcmp(instruct, "rrb") == 0)
+    {
         reverse_rotate(head_b);
+        printf("rrb\n");
+    }
     else if (ft_strcmp(instruct, "rrr") == 0)
     {
         reverse_rotate(head_a);
         reverse_rotate(head_b);
+        printf("rrr\n");
     }
 }
 
@@ -132,16 +161,63 @@ void sort(t_list **head_a, t_list **head_b)
     {
         i = 0;
         min_idx = ft_min_idx(*head_a);
-        while (i < min_idx)
+
+        while (i++ < min_idx)
         {
             instructions("ra", head_a, head_b);
-            i++;
+            printf("ra\n");
         }
+
         instructions("pb", head_a, head_b);
+        printf("pb\n");
     }
     
     while (*head_b)
+    {
         instructions("pa", head_a, head_b);
+        printf("pa\n");
+    }
+}
+
+void sort_2(t_list **head_a, t_list **head_b, int ac)
+{
+    int         i;
+    int         min_idx;
+    int         middle;
+    int         lst_len;
+
+    lst_len = ac - 1;
+    while (*head_a && lst_len > 1)
+    {
+        i = 0;
+        middle = lst_len / 2;
+        min_idx = ft_min_idx(*head_a);
+
+        if (ft_issorted(*head_a))
+            break;
+
+        if (min_idx <= middle)
+            while (i++ < min_idx)
+            {
+                instructions("ra", head_a, head_b);
+                // ft_lstprint_two(*head_a, *head_b);
+            }
+        else
+            while (i++ < (lst_len - min_idx))
+            {
+                instructions("rra", head_a, head_b);
+                // ft_lstprint_two(*head_a, *head_b);
+            }
+
+        instructions("pb", head_a, head_b);
+        // ft_lstprint_two(*head_a, *head_b);
+        lst_len--;
+    }
+    while (*head_b)
+    {
+        instructions("pa", head_a, head_b);
+        // ft_lstprint_two(*head_a, *head_b);
+    }
 }
 
 
@@ -163,11 +239,12 @@ int push_swap(int ac, char **av)
         i++;  
     }
 
-    ft_lstprint_two(head_a, head_b);
+    // ft_lstprint_two(head_a, head_b);
+    // sort(&head_a, &head_b);
+    sort_2(&head_a, &head_b, ac);
 
-    sort(&head_a, &head_b);
-
-    ft_lstprint_two(head_a, head_b);
+    // ft_lstprint_two(head_a, head_b);
+    // printf("%d\n", ft_issorted(head_a));
 
     return (0);
 }
