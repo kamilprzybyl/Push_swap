@@ -9,8 +9,8 @@ void print_stacks(t_list *a, t_list *b)
     temp_a = a;
     temp_b = b;
 
-    printf("\n A\tB \n");
-    printf("  \t  \n");
+    ft_printf("\n A\tB \n");
+    ft_printf("  \t  \n");
 
     while (temp_a || temp_b)
     {
@@ -22,5 +22,5 @@ void print_stacks(t_list *a, t_list *b)
             temp_b = temp_b->next;
     }
 
-    printf("\n");
+    ft_printf("\n");
 }
