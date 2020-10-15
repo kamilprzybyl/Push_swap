@@ -5,11 +5,11 @@ the lowest possible number of actions
 <br />
 
 ## Game rules
-- The game is composed of 2 stacks named a and b. • To start with: 
+- The game is composed of 2 stacks named a and b.  
 
-- a contains a random number of either positive or negative numbers without any duplicates.
-
-- b is empty
+- To start with: 
+  - a contains a random number of either positive or negative numbers without any duplicates.
+  - b is empty
 
 - The goal is to sort in ascending order numbers into stack a.
 
