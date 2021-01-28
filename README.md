@@ -1,3 +1,5 @@
+This project is not ready yet
+
 # Push_swap
 This project will make you sort data on a stack, with a limited set of instructions, using
 the lowest possible number of actions
@@ -36,3 +38,5 @@ the lowest possible number of actions
   $ make
   $ ./push_swap [arguments]
   ```
+  
+  :bulb: I recommend to check *Push_swap.pdf* file for better understanding
