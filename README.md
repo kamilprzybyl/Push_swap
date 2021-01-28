@@ -39,4 +39,5 @@ the lowest possible number of actions
   $ ./push_swap [arguments]
   ```
   
+  <br />
   :bulb: I recommend to check *Push_swap.pdf* file for better understanding
