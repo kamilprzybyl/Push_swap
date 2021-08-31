@@ -15,7 +15,10 @@ SRC = 	push_swap.c \
 		utils/ft_lstadd_front.c \
 		utils/ft_strncmp.c \
 		utils/ft_strdup.c \
-		utils/ft_strlcpy.c
+		utils/ft_strlcpy.c \
+		utils/ft_strchr.c \
+		utils/ft_split.c \
+		utils/ft_substr.c
 
 OBJ = 	$(SRC:.c=.o)
 
