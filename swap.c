@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-
 static void	swap(t_list **lst)
 {
 	t_list	*temp;
@@ -12,22 +11,22 @@ static void	swap(t_list **lst)
 	*lst = temp;
 }
 
-void handle_swap(char *spec, t_list **head_a, t_list **head_b)
+void	handle_swap(t_list **head, int stack)
 {
-	if (ft_strncmp("sa", spec, ft_strlen(spec)) == 0)
+	if (stack == a)
 	{
-		swap(head_a);
-		printf("sa\n");
+		swap(head);
+		ft_putstr("sa\n");
 	}
-	else if (ft_strncmp("sb", spec, ft_strlen(spec)) == 0)
+	else if (stack == b)
 	{
-		swap(head_b);
-		printf("sb\n");
+		swap(head);
+		ft_putstr("sb\n");
 	}
-	else if (ft_strncmp("ss", spec, ft_strlen(spec)) == 0)
-	{
-		swap(head_a);
-		swap(head_b);
-		printf("ss\n");
-	}
+	// else if (op == ss)
+	// {
+	// 	swap(head_a);
+	// 	swap(head_b);
+	// 	ft_putstr("ss\n");
+	// }
 }

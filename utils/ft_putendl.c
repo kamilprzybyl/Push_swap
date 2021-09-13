@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putendl(char *s)
 {
 	int	i;
 
@@ -9,7 +9,8 @@ void	ft_putstr_fd(char *s, int fd)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		write(fd, &s[i], 1);
+		write(1, &s[i], 1);
 		i++;
 	}
+	write(1, "\n", 1);
 }

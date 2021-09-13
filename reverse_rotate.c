@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void reverse_rotate(t_list **lst)
+static void	reverse_rotate(t_list **lst)
 {
 	t_list	*pre_last;
 	t_list	*last_node;
@@ -16,22 +16,22 @@ void reverse_rotate(t_list **lst)
 	*lst = last_node;
 }
 
-void handle_reverse_rotate(char *spec, t_list **head_a, t_list **head_b)
+void	handle_reverse_rotate(t_list **head, int stack)
 {
-	if (ft_strncmp("rra", spec, ft_strlen(spec)) == 0)
+	if (stack == a)
 	{
-		reverse_rotate(head_a);
-		ft_putstr_fd("rra\n", 1);
+		reverse_rotate(head);
+		ft_putstr("rra\n");
 	}
-	else if (ft_strncmp("rrb", spec, ft_strlen(spec)) == 0)
+	else if (stack == b)
 	{
-		reverse_rotate(head_b);
-		ft_putstr_fd("rrb\n", 1);
+		reverse_rotate(head);
+		ft_putstr("rrb\n");
 	}
-	else if (ft_strncmp("rrr", spec, ft_strlen(spec)) == 0)
-	{
-		reverse_rotate(head_a);
-		reverse_rotate(head_b);
-		ft_putstr_fd("rrr\n", 1);
-	}
+	// else if (op == rrr)
+	// {
+	// 	rotate(head_a);
+	// 	rotate(head_b);
+	// 	ft_putstr("rrr\n");
+	// }
 }

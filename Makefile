@@ -7,8 +7,19 @@ SRC = 	push_swap.c \
 		swap.c \
 		push.c \
 		is_sorted.c \
-		utils/ft_putchar_fd.c \
-		utils/ft_putstr_fd.c \
+		max.c \
+		min.c \
+		max_idx.c \
+		min_idx.c \
+		list_len.c \
+		get_idx.c \
+		get_content.c \
+		get_last.c \
+		case_3.c \
+		case_5.c \
+		case_100.c \
+		utils/ft_putchar.c \
+		utils/ft_putstr.c \
 		utils/ft_strlen.c \
 		utils/ft_lstadd_back.c \
 		utils/ft_lstnew.c \
@@ -18,7 +29,11 @@ SRC = 	push_swap.c \
 		utils/ft_strlcpy.c \
 		utils/ft_strchr.c \
 		utils/ft_split.c \
-		utils/ft_substr.c
+		utils/ft_substr.c \
+		utils/ft_atoi.c \
+		utils/ft_putnbr.c \
+		utils/ft_putendl.c \
+		utils/ft_isdigit.c
 
 OBJ = 	$(SRC:.c=.o)
 

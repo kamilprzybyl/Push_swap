@@ -1,35 +1,35 @@
 #include "push_swap.h"
 
-void rotate(t_list **lst)
+static void	rotate(t_list **head)
 {
 	t_list	*temp;
 	t_list	*last_node;
 
-	temp = *lst;
-	last_node = *lst;
+	temp = *head;
+	last_node = *head;
 	while (last_node->next)
 		last_node = last_node->next;
-	*lst = (*lst)->next;
+	*head = (*head)->next;
 	temp->next = NULL;
 	last_node->next = temp;
 }
 
-void handle_rotate(char *spec, t_list **head_a, t_list **head_b)
+void	handle_rotate(t_list **head, int stack)
 {
-	if (ft_strncmp("ra", spec, ft_strlen(spec)) == 0)
+	if (stack == a)
 	{
-		rotate(head_a);
-		ft_putstr_fd("ra\n", 1);
+		rotate(head);
+		ft_putstr("ra\n");
 	}
-	else if (ft_strncmp("rb", spec, ft_strlen(spec)) == 0)
+	else if (stack == b)
 	{
-		rotate(head_b);
-		ft_putstr_fd("rb\n", 1);
+		rotate(head);
+		ft_putstr("rb\n");
 	}
-	else if (ft_strncmp("rr", spec, ft_strlen(spec)) == 0)
-	{
-		rotate(head_a);
-		rotate(head_b);
-		ft_putstr_fd("rr\n", 1);
-	}
+	// else if (op == rr)
+	// {
+	// 	rotate(head_a);
+	// 	rotate(head_b);
+	// 	ft_putstr("rr\n");
+	// }
 }

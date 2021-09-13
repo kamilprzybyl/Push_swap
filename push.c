@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void push(t_list **src, t_list **dst)
+static void	push(t_list **src, t_list **dst)
 {
 	t_list	*temp;
 
@@ -10,16 +10,16 @@ void push(t_list **src, t_list **dst)
 	ft_lstadd_front(dst, temp);
 }
 
-void handle_push(char *spec, t_list **head_a, t_list **head_b)
+void	handle_push(t_list **head_a, t_list **head_b, int stack)
 {
-	if (ft_strncmp("pa", spec, ft_strlen(spec)) == 0)
+	if (stack == a)
 	{
 		push(head_b, head_a);
-		ft_putstr_fd("pa\n", 1);
+		ft_putstr("pa\n");
 	}
-	else if (ft_strncmp("pb", spec, ft_strlen(spec)) == 0)
+	else if (stack == b)
 	{
 		push(head_a, head_b);
-		ft_putstr_fd("pb\n", 1);
+		ft_putstr("pb\n");
 	}
 }
