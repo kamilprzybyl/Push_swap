@@ -8,51 +8,10 @@ void	push_swap(t_list **head_a, t_list **head_b, int ac)
 		case_3(head_a, a);
 	else if (ac == 5 || ac == 6)
 		case_5(head_a, head_b);
-	else if (ac >= 7 || ac <= 100)
+	else if (ac >= 7 && ac <= 501)
 		case_100(head_a, head_b);
 	// else if (ac >= 101 && ac <= 500)
 	// 	case_500(head_a, head_b);
-}
-
-int	is_dup(t_list *head)
-{
-	t_list	*curr_1;
-	t_list	*curr_2;
-	int		i;
-	int		j;
-
-	i = 0;
-	curr_1 = head;
-	curr_2 = head;
-	while (curr_1)
-	{
-		j = 0;
-		while (curr_2)
-		{
-			if (curr_1->content == curr_2->content && i != j)
-				return (1);
-			curr_2 = curr_2->next;
-			j++;
-		}
-		curr_2 = head;
-		curr_1 = curr_1->next;
-		i++;
-	}
-	return (0);
-}
-
-int	is_number(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (!ft_isdigit(s[i]))
-			return (0);
-		i++;
-	}
-	return (1);
 }
 
 static int	init(t_list **head_a, int ac, char **av)
