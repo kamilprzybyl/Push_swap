@@ -22,7 +22,8 @@ SRC = 	push_swap.c \
 		utils/is_dup.c \
 		utils/is_number.c \
 		utils/move_top.c \
-		utils/handle_chunk.c \
+		utils/put_to_arr.c \
+		utils/push_smaller.c \
 		utils/quick_sort.c \
 		utils/ft_putchar.c \
 		utils/ft_putstr.c \

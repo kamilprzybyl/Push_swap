@@ -1,17 +1,18 @@
 #include "push_swap.h"
 
-void	push_swap(t_list **head_a, t_list **head_b, int ac)
+void	push_swap(t_list **head_a, t_list **head_b)
 {
+	int	len;
+
+	len = list_len(*head_a);
 	if (is_sorted(*head_a))
 		return ;
- 	if (ac <= 4)
+ 	if (len <= 3)
 		case_3(head_a, a);
-	else if (ac == 5 || ac == 6)
+	else if (len <= 5)
 		case_5(head_a, head_b);
-	else if (ac >= 7 && ac <= 501)
-		case_100(head_a, head_b);
-	// else if (ac >= 101 && ac <= 500)
-	// 	case_500(head_a, head_b);
+	else if (len <= 500)
+		case_500(head_a, head_b);
 }
 
 static int	init(t_list **head_a, int ac, char **av)
@@ -31,7 +32,7 @@ static int	init(t_list **head_a, int ac, char **av)
 		while (arr[j])
 		{
 			if (!is_number(arr[j]))
-				return (write(1, "only numbers bro!\n", 19));
+				return (write(1, "Error!\n", 8));
 			temp = ft_lstnew(ft_atoi(arr[j]));
 			ft_lstadd_back(head_a, temp);
 			j++;
@@ -39,7 +40,7 @@ static int	init(t_list **head_a, int ac, char **av)
 		i++;
 	}
 	if (is_dup(*head_a))
-		return ((write(1, "without duplicates please!\n", 28)));
+		return ((write(1, "Error!\n", 8)));
 	return (0);
 }
 
@@ -53,7 +54,7 @@ int	main(int ac, char **av)
 	if (init(&head_a, ac, av))
 		return (1);
 	// print_stacks(head_a, head_b);
-	push_swap(&head_a, &head_b, ac);
+	push_swap(&head_a, &head_b);
 	// print_stacks(head_a, head_b);
 	return (0);
 }

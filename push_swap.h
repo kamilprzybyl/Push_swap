@@ -14,7 +14,7 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
-void	push_swap(t_list **head_a, t_list **head_b, int ac);
+void	push_swap(t_list **head_a, t_list **head_b);
 void	handle_reverse_rotate(t_list **head, int stack);
 void	handle_rotate(t_list **head, int stack);
 void	handle_push(t_list **head_a, t_list **head_b, int stack);
@@ -25,6 +25,8 @@ void	case_5(t_list **head_a, t_list **head_b);
 void	case_100(t_list **head_a, t_list **head_b);
 void	case_500(t_list **head_a, t_list **head_b);
 
+int		push_smaller(t_list **head_a, t_list **head_b, int apex);
+int		*put_to_arr(t_list *head);
 void	handle_chunk(t_list	**head_a, t_list **head_b, int start, int end);
 void	quick_sort(int *arr, int low, int high);
 void	print_stacks(t_list *head_a, t_list *head_b);

@@ -1,13 +1,13 @@
 #include "push_swap.h"
 
-static void	sort_stack(t_list **head, int stack)
+static void	sort_stack(t_list **head)
 {
 	if (min_idx(*head) == 1 || min_idx(*head) == 2)
 		while (min_idx(*head) != 0)
-			handle_rotate(head, stack);
+			handle_rotate(head, a);
 	else
 		while (min_idx(*head) != 0)
-			handle_reverse_rotate(head, stack);
+			handle_reverse_rotate(head, a);
 }
 
 void	case_5(t_list **head_a, t_list **head_b)
@@ -27,8 +27,8 @@ void	case_5(t_list **head_a, t_list **head_b)
 					handle_reverse_rotate(head_a, a);
 		}
 		else
-			sort_stack(head_a, a);
+			sort_stack(head_a);
 		handle_push(head_a, head_b, a);
 	}
-	sort_stack(head_a, a);
+	sort_stack(head_a);
 }

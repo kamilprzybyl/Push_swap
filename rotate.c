@@ -26,10 +26,4 @@ void	handle_rotate(t_list **head, int stack)
 		rotate(head);
 		ft_putstr("rb\n");
 	}
-	// else if (op == rr)
-	// {
-	// 	rotate(head_a);
-	// 	rotate(head_b);
-	// 	ft_putstr("rr\n");
-	// }
 }

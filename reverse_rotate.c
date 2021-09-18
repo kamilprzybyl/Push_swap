@@ -28,10 +28,4 @@ void	handle_reverse_rotate(t_list **head, int stack)
 		reverse_rotate(head);
 		ft_putstr("rrb\n");
 	}
-	// else if (op == rrr)
-	// {
-	// 	rotate(head_a);
-	// 	rotate(head_b);
-	// 	ft_putstr("rrr\n");
-	// }
 }
