@@ -16,12 +16,12 @@ static void	rotate(t_list **head)
 
 void	handle_rotate(t_list **head, int stack)
 {
-	if (stack == a)
+	if (stack == A)
 	{
 		rotate(head);
 		ft_putstr("ra\n");
 	}
-	else if (stack == b)
+	else if (stack == B)
 	{
 		rotate(head);
 		ft_putstr("rb\n");

@@ -6,8 +6,8 @@ void	case_3(t_list **head, int stack)
 	{
 		if (max_idx(*head) == 0)
 			handle_rotate(head, stack);
-		else if ((max_idx(*head) == 1 && min_idx(*head) == 0) ||
-				(max_idx(*head) == 2 && min_idx(*head) == 1))
+		else if ((max_idx(*head) == 1 && min_idx(*head) == 0)
+			|| (max_idx(*head) == 2 && min_idx(*head) == 1))
 			handle_swap(head, stack);
 		else if (max_idx(*head) == 1 && min_idx(*head) == 2)
 			handle_reverse_rotate(head, stack);

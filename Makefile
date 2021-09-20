@@ -3,7 +3,6 @@ NAME = 	push_swap
 SRC = 	push_swap.c \
 		case_3.c \
 		case_5.c \
-		case_100.c \
 		case_500.c \
 		reverse_rotate.c \
 		rotate.c \
@@ -22,9 +21,10 @@ SRC = 	push_swap.c \
 		utils/is_dup.c \
 		utils/is_number.c \
 		utils/move_top.c \
-		utils/put_to_arr.c \
 		utils/push_smaller.c \
 		utils/quick_sort.c \
+		utils/free_arr.c \
+		utils/free_list.c \
 		utils/ft_putchar.c \
 		utils/ft_putstr.c \
 		utils/ft_strlen.c \
@@ -58,5 +58,8 @@ clean:
 fclean:
 	make clean
 	rm -fr $(NAME)
+
+val:
+	docker run -ti -v $(PWD):/test memory-test:0.1 bash -c "cd /test/; gcc -o main *.c utils/*.c && valgrind --leak-check=full ./main 10 11 5 2 -2 32 17 171 21412 242 353 -325"
 
 re: fclean all

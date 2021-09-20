@@ -1,27 +1,17 @@
 #include "../push_swap.h"
 
-int	is_dup(t_list *head)
+int	is_dup(t_list *head, int num)
 {
-	t_list	*curr_1;
-	t_list	*curr_2;
+	t_list	*curr;
 	int		i;
-	int		j;
 
 	i = 0;
-	curr_1 = head;
-	curr_2 = head;
-	while (curr_1)
+	curr = head;
+	while (curr)
 	{
-		j = 0;
-		while (curr_2)
-		{
-			if (curr_1->content == curr_2->content && i != j)
-				return (1);
-			curr_2 = curr_2->next;
-			j++;
-		}
-		curr_2 = head;
-		curr_1 = curr_1->next;
+		if (curr->content == num)
+			return (1);
+		curr = curr->next;
 		i++;
 	}
 	return (0);

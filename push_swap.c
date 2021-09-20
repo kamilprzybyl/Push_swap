@@ -7,12 +7,23 @@ void	push_swap(t_list **head_a, t_list **head_b)
 	len = list_len(*head_a);
 	if (is_sorted(*head_a))
 		return ;
- 	if (len <= 3)
-		case_3(head_a, a);
+	if (len <= 3)
+		case_3(head_a, A);
 	else if (len <= 5)
 		case_5(head_a, head_b);
-	else if (len <= 500)
+	else
 		case_500(head_a, head_b);
+}
+
+static void	handle_error(t_list **head, char *arg)
+{
+	if (!is_number(arg)
+		|| (ft_atoi(arg) == -1 && ft_strlen(arg) > 2)
+		|| is_dup(*head, ft_atoi(arg)))
+	{
+		write(1, "Error!\n", 8);
+		exit(1);
+	}
 }
 
 static int	init(t_list **head_a, int ac, char **av)
@@ -27,20 +38,20 @@ static int	init(t_list **head_a, int ac, char **av)
 	{
 		arr = ft_split(av[i], ' ');
 		if (!arr)
+		{
+			free_list(head_a);
 			return (1);
+		}
 		j = 0;
 		while (arr[j])
 		{
-			if (!is_number(arr[j]))
-				return (write(1, "Error!\n", 8));
-			temp = ft_lstnew(ft_atoi(arr[j]));
+			handle_error(head_a, arr[j]);
+			temp = ft_lstnew(ft_atoi(arr[j++]));
 			ft_lstadd_back(head_a, temp);
-			j++;
 		}
 		i++;
+		free_arr(arr);
 	}
-	if (is_dup(*head_a))
-		return ((write(1, "Error!\n", 8)));
 	return (0);
 }
 
@@ -53,8 +64,7 @@ int	main(int ac, char **av)
 	head_b = NULL;
 	if (init(&head_a, ac, av))
 		return (1);
-	// print_stacks(head_a, head_b);
 	push_swap(&head_a, &head_b);
-	// print_stacks(head_a, head_b);
+	free_list(&head_a);
 	return (0);
 }

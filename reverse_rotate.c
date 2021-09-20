@@ -18,12 +18,12 @@ static void	reverse_rotate(t_list **lst)
 
 void	handle_reverse_rotate(t_list **head, int stack)
 {
-	if (stack == a)
+	if (stack == A)
 	{
 		reverse_rotate(head);
 		ft_putstr("rra\n");
 	}
-	else if (stack == b)
+	else if (stack == B)
 	{
 		reverse_rotate(head);
 		ft_putstr("rrb\n");

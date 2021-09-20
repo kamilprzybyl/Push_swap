@@ -12,12 +12,12 @@ static void	push(t_list **src, t_list **dst)
 
 void	handle_push(t_list **head_a, t_list **head_b, int stack)
 {
-	if (stack == a)
+	if (stack == A)
 	{
 		push(head_b, head_a);
 		ft_putstr("pa\n");
 	}
-	else if (stack == b)
+	else if (stack == B)
 	{
 		push(head_a, head_b);
 		ft_putstr("pb\n");

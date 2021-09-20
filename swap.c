@@ -13,20 +13,14 @@ static void	swap(t_list **lst)
 
 void	handle_swap(t_list **head, int stack)
 {
-	if (stack == a)
+	if (stack == A)
 	{
 		swap(head);
 		ft_putstr("sa\n");
 	}
-	else if (stack == b)
+	else if (stack == B)
 	{
 		swap(head);
 		ft_putstr("sb\n");
 	}
-	// else if (op == ss)
-	// {
-	// 	swap(head_a);
-	// 	swap(head_b);
-	// 	ft_putstr("ss\n");
-	// }
 }
