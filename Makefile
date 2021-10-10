@@ -1,46 +1,46 @@
 FLAGS = -Wall -Wextra -Werror
 NAME = 	push_swap
-SRC = 	push_swap.c \
-		case_3.c \
-		case_5.c \
-		case_500.c \
-		reverse_rotate.c \
-		rotate.c \
-		swap.c \
-		push.c \
-		utils/print_stacks.c \
-		utils/is_sorted.c \
-		utils/max.c \
-		utils/min.c \
-		utils/max_idx.c \
-		utils/min_idx.c \
-		utils/list_len.c \
-		utils/get_idx.c \
-		utils/get_content.c \
-		utils/get_last.c \
-		utils/is_dup.c \
-		utils/is_number.c \
-		utils/move_top.c \
-		utils/push_smaller.c \
-		utils/quick_sort.c \
-		utils/free_arr.c \
-		utils/free_list.c \
-		utils/ft_putchar.c \
-		utils/ft_putstr.c \
-		utils/ft_strlen.c \
-		utils/ft_lstadd_back.c \
-		utils/ft_lstnew.c \
-		utils/ft_lstadd_front.c \
-		utils/ft_strncmp.c \
-		utils/ft_strdup.c \
-		utils/ft_strlcpy.c \
-		utils/ft_strchr.c \
-		utils/ft_split.c \
-		utils/ft_substr.c \
-		utils/ft_atoi.c \
-		utils/ft_putnbr.c \
-		utils/ft_putendl.c \
-		utils/ft_isdigit.c
+SRC = 	src/push_swap.c \
+		src/case_3.c \
+		src/case_5.c \
+		src/case_500.c \
+		src/reverse_rotate.c \
+		src/rotate.c \
+		src/swap.c \
+		src/push.c \
+		src/utils/print_stacks.c \
+		src/utils/is_sorted.c \
+		src/utils/max.c \
+		src/utils/min.c \
+		src/utils/max_idx.c \
+		src/utils/min_idx.c \
+		src/utils/list_len.c \
+		src/utils/get_idx.c \
+		src/utils/get_content.c \
+		src/utils/get_last.c \
+		src/utils/is_dup.c \
+		src/utils/is_number.c \
+		src/utils/move_top.c \
+		src/utils/push_smaller.c \
+		src/utils/quick_sort.c \
+		src/utils/free_arr.c \
+		src/utils/free_list.c \
+		src/utils/ft_putchar.c \
+		src/utils/ft_putstr.c \
+		src/utils/ft_strlen.c \
+		src/utils/ft_lstadd_back.c \
+		src/utils/ft_lstnew.c \
+		src/utils/ft_lstadd_front.c \
+		src/utils/ft_strncmp.c \
+		src/utils/ft_strdup.c \
+		src/utils/ft_strlcpy.c \
+		src/utils/ft_strchr.c \
+		src/utils/ft_split.c \
+		src/utils/ft_substr.c \
+		src/utils/ft_atoi.c \
+		src/utils/ft_putnbr.c \
+		src/utils/ft_putendl.c \
+		src/utils/ft_isdigit.c
 
 OBJ = 	$(SRC:.c=.o)
 
