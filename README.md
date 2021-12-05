@@ -7,3 +7,11 @@ This project involves sorting data on a stack, with a limited set of instruction
 <br />
 
 YEP uh huh!
+
+## Usage
+```
+git clone <repo>
+cd <repo>
+make
+./push_swap [just type some numbers]
+```
